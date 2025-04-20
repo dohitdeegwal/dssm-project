@@ -1,61 +1,72 @@
+# 📝 Resume Parser
 
-# ATS.
+A FastAPI-based application that uses OpenAI's API to extract skills from job descriptions and resumes, returning a match rate and relevant skills.
 
-Integerated OpenAi api's to extracts skills from jd & resume and return match rate & skills
+---
 
-### System Requriments:
-- Ubuntu OS 20.04
-- Python3.10
+## ⚙️ System Requirements
 
+- **OS:** Ubuntu 20.04  
+- **Python:** 3.10+
 
+---
 
-### Setup Process
-1. Create virutal enviroment & Install dependency
-    ```
-    > python -m venv venv 
+## 🚀 Setup Instructions
 
-    or
+### 1. Create a Virtual Environment and Install Dependencies
 
-    > python -m virtualenv venv
+```bash
+# Create virtual environment
+python -m venv venv
+# OR (if you have virtualenv installed)
+python -m virtualenv venv
 
-    > venv\Scripts\activate
+# Activate virtual environment
+source venv/bin/activate
 
-    > pip install -r requirements.txt
+# Install dependencies
+pip install -r requirements.txt
+```
 
-    ```
+---
 
+### 2. Configure Environment Variables
 
-2. Create .env file in project root
-    ```command
-    OPENAI_API_KEY=sk-......
-    TEMPERATURE=0
-    CHAT_MODEL=gpt-3.5-turbo
-    ORIGINS=http://127.0.0.1:5137, http://localhost:5137
+Create a `.env` file in the root of the project with the following content:
 
-    ```
+```env
+OPENAI_API_KEY=sk-...
+TEMPERATURE=0
+CHAT_MODEL=gpt-3.5-turbo
+ORIGINS=http://127.0.0.1:5137, http://localhost:5137
+```
 
-   
-3. Run Fast api Application
-  ```
-  Dev mode :
-  > uvicorn main:app --host 0.0.0.0 --port 5003 --reload
+---
 
-  Add more workers:
-  > uvicorn main:app --host 0.0.0.0 --port 5000 --workers 4
+### 3. Run the FastAPI Application
 
-  Default timeout is 30 secs:
-  > uvicorn main:app --host 0.0.0.0 --port 5000 --workers 4 --timeout-keep-alive 600
+```bash
+# Development mode
+uvicorn main:app --host 0.0.0.0 --port 5000 --reload
 
-  ```
+# With multiple workers
+uvicorn main:app --host 0.0.0.0 --port 5000 --workers 4
 
+# With custom timeout
+uvicorn main:app --host 0.0.0.0 --port 5000 --workers 4 --timeout-keep-alive 600
+```
 
-4. Open Fast Api document
-    ```
-    Visit > http://127.0.0.1:5000/docs
-    ```
+---
 
-## Features
+### 4. Access API Documentation
 
-- Resume relevance score  
-- Query resumes
+Visit: [http://0.0.0.0:5000/docs](http://0.0.0.0:5000/docs)
 
+---
+
+## ✅ Features
+
+- 📊 Resume–JD Relevance Scoring  
+- 🔍 Resume Skill Matching  
+- 💬 Query Resumes via OpenAI API  
+- ⚡ FastAPI with OpenAI Integration
